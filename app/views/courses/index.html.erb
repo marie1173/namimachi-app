@@ -1,0 +1,11 @@
+<h1>コース一覧</h1>
+<% @courses.each do |course| %>
+ <div class="course">
+   <div class="course-name">
+     コース名：<%= course.course_name %>
+   </div>
+   <div class="course-content">
+     概要　　：<%= course.course_introduction %>
+   </div>
+ </div>
+<% end %>
