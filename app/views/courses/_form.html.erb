@@ -1,22 +1,42 @@
-<%= form_with model: モデル名, local: true do |f|%>
+<%= form_with model: @course, local: true do |f|%>
   <div class="field">
-    <%= f.label :hoge, "プロトタイプの名称" %><br />
-    <%= f.text_field :hoge, id:"prototype_title" %>
+    <%= f.label :course_name, "コースの名前" %><br />
+    <%= f.text_field :course_name, id:"course_name" %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "キャッチコピー" %><br />
-    <%= f.text_area :hoge, class: :form__text, id:"prototype_catch_copy" %>
+    <%= f.label :course_introduction, "コース情報" %><br />
+    <%= f.text_area :course_introduction, class: :form__text, id:"course_introduction" %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "コンセプト" %><br />
-    <%= f.text_area :hoge, class: :form__text, id:"prototype_concept" %>
+    <%= f.label :price, "コース価格" %><br />
+    <%= f.text_field :price, id:"price" %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "プロトタイプの画像" %><br />
-    <%= f.file_field :hoge, id:"prototype_image" %>
+    <%= f.label :max_number, "コーチング回数上限" %><br />
+    <%= f.text_field :max_number, id:"max_number" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lead_time_id, "リードタイム" %><br />
+    <%= f.text_field :lead_time_id, id:"lead_time_id" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :no_reply_period, "返信ができない期間" %><br />
+    <%= f.text_field :no_reply_period, id:"no_reply_period" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :remarks, "備考" %><br />
+    <%= f.text_area :remarks, class: :form__text, id:"remarks" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "コースの画像" %><br />
+    <%= f.file_field :image, id:"course_image" %>
   </div>
 
   <div class="actions">
