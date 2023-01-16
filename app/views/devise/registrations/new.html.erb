@@ -4,33 +4,60 @@
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
-      <div class="field">
-        <%= f.label :nickname %> <em>(6 characters maximum)</em>
-        <strong class="indispensable">必須</strong>
-        <%= f.text_field :nickname, autofocus: true, maxlength: "6" %>
-      </div>
+        <div class="field">
+          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
+        </div>
 
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email %>
-      </div>
+        <div class="field">
+          <%= f.label :password, "パスワード（6文字以上）" %><br />
+          <%= f.password_field :password, id:"user_password", autocomplete: "new-password" %>
+        </div>
 
-      <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
+        <div class="field">
+          <%= f.label :password_confirmation, "パスワード再入力" %><br />
+          <%= f.password_field :password_confirmation, id:"user_password_confirmation", autocomplete: "new-password" %>
+        </div>
 
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-      </div>
+        <div class="field">
+          <%= f.label :name, "氏名" %><br />
+          <%= f.text_field :name, id:"user_name" %>
+        </div>
 
-      <div class="actions">
-        <%= f.submit "Sign up" %>
-      </div>
+        <div class="field">
+          <%= f.label :name_kana, "氏名（カナ）" %><br />
+          <%= f.text_field :name_kana, class: :form__text, id:"name_kana" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :birthday, "生年月日" %><br />
+          <%= f.text_field :birthday, class: :form__text, id:"birthday" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :sex_id, "性別" %><br />
+          <%= f.text_field :sex_id, class: :form__text, id:"sex_id" %>
+        </div>
+        
+        <div class="field">
+          <%= f.label :homepoint_id, "ホームポイント" %><br />
+          <%= f.text_field :homepoint_id, class: :form__text, id:"homepoint_id" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :level_id, "波乗りレベル" %><br />
+          <%= f.text_field :level_id, class: :form__text, id:"level_id" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :frequency_id, "波乗り頻度" %><br />
+          <%= f.text_field :frequency_id, class: :form__text, id:"frequency_id" %>
+        </div>
+
+
+        <div class="actions">
+          <%= f.submit "新規登録", class: :form__btn  %>
+        </div>
     <% end %>
   </div>
 </div>

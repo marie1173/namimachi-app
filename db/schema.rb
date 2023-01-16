@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2023_01_13_064942) do
     t.integer "homepoint_id", null: false
     t.integer "level_id", null: false
     t.integer "frequency_id", null: false
-    t.string "comment"
+    t.text "comment"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

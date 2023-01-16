@@ -14,7 +14,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.integer :homepoint_id, null: false
       t.integer :level_id, null: false
       t.integer :frequency_id, null: false
-      t.string :comment
+      t.text :comment
 
 
       ## Recoverable
