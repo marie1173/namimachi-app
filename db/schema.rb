@@ -25,16 +25,16 @@ ActiveRecord::Schema.define(version: 2023_01_13_064942) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "nickname", null: false
+    t.string "nickname"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "name", null: false
-    t.string "name_kana", null: false
-    t.date "birthday", null: false
-    t.integer "sex_id", null: false
-    t.integer "homepoint_id", null: false
-    t.integer "level_id", null: false
-    t.integer "frequency_id", null: false
+    t.string "name"
+    t.string "name_kana"
+    t.date "birthday"
+    t.integer "sex_id"
+    t.integer "homepoint_id"
+    t.integer "level_id"
+    t.integer "frequency_id"
     t.text "comment"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
