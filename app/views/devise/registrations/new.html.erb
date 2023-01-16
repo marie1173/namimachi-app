@@ -1,0 +1,74 @@
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <h2 class="page-heading">ユーザー新規登録</h2>
+
+        <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+
+        <div class="field">
+          <%= f.label :nickname, "ニックネーム" %><br />
+          <%= f.text_field :name, id:"nickname" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, "パスワード（6文字以上）" %><br />
+          <%= f.password_field :password, id:"user_password", autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation, "パスワード再入力" %><br />
+          <%= f.password_field :password_confirmation, id:"user_password_confirmation", autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :name, "氏名" %><br />
+          <%= f.text_field :name, id:"user_name" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :name_kana, "氏名（カナ）" %><br />
+          <%= f.text_field :name, id:"user_name_kana" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :birthday, "生年月日" %><br />
+          <%= f.text_field :birthday, class: :form__text, id:"birthday" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :sex_id, "性別" %><br />
+          <%= f.text_field :sex_id, class: :form__text, id:"sex_id" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :homepoint_id, "ホームポイント" %><br />
+          <%= f.text_field :homepoint_id, class: :form__text, id:"homepoint_id" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :level_id, "波乗りレベル" %><br />
+          <%= f.text_field :level_id, class: :form__text, id:"level_id" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :frequency_id, "頻度" %><br />
+          <%= f.text_field :frequency_id, class: :form__text, id:"frequency_id" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :comment, "自己紹介等ご自由に記載ください。" %><br />
+          <%= f.text_area :comment, class: :form__text, id:"comment" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "新規登録", class: :form__btn  %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

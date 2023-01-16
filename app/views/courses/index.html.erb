@@ -1,9 +1,14 @@
-<h1>コース一覧</h1>
-<div class="contents row">
-  <% @courses.each do |course| %>
-      <span class="name">
-        <%= course.course_name %>
-      </span>
-    </div>
-  <% end %>
-</div>
+<main class="main">
+  <div class="inner">
+    <%# ログインしているときは以下を表示する %>
+    <% if user_signed_in? %>
+      <div class="greeting">
+        <%= "こんにちは、 " %>
+        <%= current_user.name %>
+        <%= "さん " %>
+        <%#= link_to current_user.name + "さん", user_path(current_user.id), class: :greeting__link%>
+      </div>
+    <% end %>
+  </div>
+</main>
+
