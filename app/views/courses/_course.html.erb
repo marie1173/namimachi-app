@@ -1,0 +1,9 @@
+<div class="card">
+ <%= link_to image_tag(course.image, class: :card__img ), course_path(course.id)%>
+  <div class="card__body">
+    <%= link_to course.course_name, course_path(course.id), class: :card__title%>
+    <p class="card__summary">
+      <%= course.course_introduction %>
+    </p>
+  </div>
+</div>
