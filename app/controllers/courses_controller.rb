@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
   end
 
   def new
-    @course = Course.new
+   @course = Course.new
   end
 
   def create
@@ -16,8 +16,16 @@ class CoursesController < ApplicationController
     end
   end
 
+  def destroy
+    course = Course.find(params[:id])
+    course.destroy
+    redirect_to root_path
+  end
+
   def show
     @course = Course.find(params[:id])
+    @coach = Coach.new
+    @coaches = Coach.all
   end
 
   private
