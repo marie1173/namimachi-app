@@ -1,0 +1,25 @@
+<main class="main">
+  <div class="inner">
+    <div class="course__wrapper">
+      <p class="course__hedding">
+        <%= @course.course_name %>
+      </p>
+        <div class="course__image">
+          <%#= image_tag @course.image %>
+        </div>
+        <div class="course__body">
+          <div class="course__detail">
+            <p class="detail__title">名前</p>
+            <p class="detail__message">
+              <%= @coach.coach_name %>
+            <p class="detail__title">実績等</p>
+            <p class="detail__message">
+              <%= @coach.good_point %>
+            <p class="detail__title">プロフィール</p>
+            <p class="detail__message">
+              <%= @coach.profile %></p>
+          </div>
+        </div>
+    </div>
+  </div>
+</main>

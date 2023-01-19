@@ -1,0 +1,25 @@
+      <div class="course__coaches">
+        <div class="inner">
+            <ul class="coaches_lists">
+              <% @coaches.each do |coach| %>
+                <li class='list'>
+                    <div class='coach-img-content'>
+                      <%= image_tag coach.image, class: "coach-img" if coach.image.attached? %>
+                    </div>
+                    <div class='coach-info'>
+                      <h3 class='coach-name'>
+                        <%= coach.coach_name %>
+                      </h3>
+                      <p class="detail__title">実績等</p>
+                      <p class="detail__message">
+                        <%= coach.good_point %>
+                      <p class="detail__title">プロフィール</p>
+                      <p class="detail__message">
+                        <%= coach.profile %></p><br><br>
+                    </div>
+                  <%# end %>
+                </li>
+              <% end %>
+            </ul>
+        </div>
+      </div>

@@ -70,6 +70,19 @@ a {
   background: #87CEFA;
 }
 
+.nav__btn2{
+  display: inline-block;
+  padding: 0.9em 1.6em;
+  font-size: 0.8em;
+  color: #fff;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #fa8794 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  background: #fa8794;
+}
+
 .nav__logout{
   display: inline-block;
   padding: 0.4em 1.6em;
@@ -162,7 +175,7 @@ a {
 }
 
 /* 詳細ページ */
-.prototype__wrapper{
+.course__wrapper{
   min-height: calc(100vh - 161px);
 }
 .course__hedding{
@@ -178,7 +191,7 @@ a {
   text-decoration: underline;
 }
 .course__image{
-  width: 40%;
+  width: 300px;
   margin: 0 auto;
   padding: 16px 0;
 }
@@ -188,9 +201,21 @@ a {
   flex-direction: column;
   margin-bottom: 8px;
 }
-.detail__title{
-  font-size: 20px;
+.coach-name{
+  font-size: 25px;
+  color: #093fb6;
   font-weight: bold;
+}
+.coach-img{
+  width: 250px;
+}
+
+.detail__title{
+  font-size: 15px;
+  font-weight: bold;
+}
+.detail__message{
+  font-size: 13px;
 }
 .course__manage{
   display: flex;

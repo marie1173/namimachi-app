@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_16_085112) do
+ActiveRecord::Schema.define(version: 2023_01_17_084734) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -31,6 +31,28 @@ ActiveRecord::Schema.define(version: 2023_01_16_085112) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "coaches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "coach_name"
+    t.string "coach_name_kana"
+    t.integer "sex_id"
+    t.date "coach_birthday"
+    t.string "homepoint"
+    t.string "good_point"
+    t.text "profile"
+    t.integer "course1"
+    t.integer "course2"
+    t.integer "course3"
+    t.integer "course4"
+    t.integer "course5"
+    t.bigint "user_id", null: false
+    t.bigint "course_id", null: false
+    t.text "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["course_id"], name: "index_coaches_on_course_id"
+    t.index ["user_id"], name: "index_coaches_on_user_id"
   end
 
   create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -69,5 +91,7 @@ ActiveRecord::Schema.define(version: 2023_01_16_085112) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "coaches", "courses"
+  add_foreign_key "coaches", "users"
   add_foreign_key "courses", "users"
 end

@@ -4,7 +4,6 @@
       <p class="course__hedding">
         <%= @course.course_name %>
       </p>
-      <%# // (済）プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
         <div class="course__image">
           <%= image_tag @course.image %>
         </div>
@@ -27,10 +26,14 @@
               <%= @course.no_reply_period %>
             <p class="detail__title">備考欄</p>
             <p class="detail__message">
-              <%= @course.remarks %>                   
-            </p>
+              <%= @course.remarks %>                 
+            </p><br>
+            <%= link_to "選択可能なコーチをみる", course_coaches_path(@course.id), class: :nav__btn %><br>
+            <%= link_to "購入画面に進む", root_path, class: :nav__btn2 %>
           </div>
         </div>
     </div>
   </div>
+  <%= link_to "コーチを登録する", new_course_coach_path(@course.id), class: :nav__btn %>
+  <%#= link_to "d", course_path(@course.id), method: :delete %>
 </main>
